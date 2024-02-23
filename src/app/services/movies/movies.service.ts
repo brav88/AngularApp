@@ -13,6 +13,14 @@ export class MoviesService {
   }
 
   getMoviePage(page: number) {
-    return this.http.get('https://api.themoviedb.org/4/list/1?page='+page+'&api_key=5f2b5e0ae3a00a80c918135739ad8f3f');
+    return this.http.get('https://api.themoviedb.org/4/list/1?page=' + page + '&api_key=5f2b5e0ae3a00a80c918135739ad8f3f');
+  }
+
+  getMovieDetail(movieId: number) {
+    return this.http.get('https://api.themoviedb.org/3/movie/' + movieId + '?api_key=5f2b5e0ae3a00a80c918135739ad8f3f');
+  }
+
+  getMovieVideos(movieId: number) {
+    return this.http.get('https://api.themoviedb.org/3/movie/' + movieId + '/videos?api_key=5f2b5e0ae3a00a80c918135739ad8f3f')
   }
 }
